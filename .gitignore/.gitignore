@@ -16,6 +16,7 @@ public class Welcome extends AppCompatActivity {
 
     Button btnLogin;
 
+    // hardcode some fake SQL data
     final String PASSWORD = "P@55w0rD";
     final String USERNAME = "BigWindows";
 
@@ -24,6 +25,7 @@ public class Welcome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
+        //Connect all the xml elements
         btnLogin = (Button) findViewById(R.id.btn);
 
         pw = (EditText) findViewById(R.id.txtPassword);
@@ -32,6 +34,8 @@ public class Welcome extends AppCompatActivity {
         tv = (TextView) findViewById(R.id.tv);
     }
 
+        // if the username matches up with the test data set a textView to success
+        // or print failure
     public void attemptLogin(View v){
         if (username.getText().toString()==USERNAME){
             tv.setText("Success");
