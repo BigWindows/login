@@ -1,0 +1,44 @@
+package com.example.don96.login;
+
+import android.accessibilityservice.FingerprintGestureController;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Welcome extends AppCompatActivity {
+
+    EditText pw,username;
+
+    TextView tv;
+
+    Button btnLogin;
+
+    final String PASSWORD = "P@55w0rD";
+    final String USERNAME = "BigWindows";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_welcome);
+
+        btnLogin = (Button) findViewById(R.id.btn);
+
+        pw = (EditText) findViewById(R.id.txtPassword);
+        username = (EditText) findViewById(R.id.txtUsername);
+
+        tv = (TextView) findViewById(R.id.tv);
+    }
+
+    public void attemptLogin(View v){
+        if (username.getText().toString()==USERNAME){
+            tv.setText("Success");
+        }else{
+            tv.setText("Failiure "+username.getText().toString());
+        }
+
+
+    }
+}
